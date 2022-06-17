@@ -13,9 +13,8 @@ const PORT = 8080;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.engine("handlebars", engine());
-app.set("view engine", "handlebars");
 app.set("views", "./views");
+app.set("view engine", "pug");
 
 app.use("/productos", productos);
 

@@ -1,0 +1,30 @@
+extends layout
+
+block medidor
+    // el guión permite definir variables
+    - const estilo = "width:25%;height:20px"
+    // el simbolo != permite insertar html parseado en lugar del string literal contenido en la variable
+    h1(style="color:blue;")="Productos"
+    ul
+      each val in productos
+        li= "id: "+val.id
+          ul
+            li="title: "+val.title 
+            li="price: "+val.price
+
+    h1(style="color:green;")="Ingrese datos"
+    br
+
+    form(action="/productos" method="post")
+
+      div(cass="form-group")
+        label(for="title")
+          b="Title"
+            input(id="title" class="form-control" type="text" name="title")
+      
+      div(cass="form-group")
+        label(for="price")
+          b="Price"
+            input(id="price" class="form-control" type="number" name="price")
+
+      button(class="btn btn-success mt-3 mb-5")="Submit"

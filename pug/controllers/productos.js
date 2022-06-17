@@ -17,7 +17,7 @@ const productos = [];
 const getProductos = async (req, res) => {
   const ans = await product.getAll();
 
-  res.render("datos", {
+  res.render("productos", {
     productos: ans,
   });
 };
@@ -28,7 +28,7 @@ const postProducto = async (req, res) => {
   const { title, price } = req.body;
   await product.save({ title: title, price: price });
 
-  res.redirect("/datos");
+  res.redirect("/productos");
 };
 
 module.exports = {

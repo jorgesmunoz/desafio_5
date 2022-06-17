@@ -17,7 +17,7 @@ const productos = [];
 const getProductos = async (req, res) => {
   const ans = await product.getAll();
 
-  res.render("datos", {
+  res.render("inicio", {
     productos: ans,
   });
 };
